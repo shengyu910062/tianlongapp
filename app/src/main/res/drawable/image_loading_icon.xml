@@ -1,0 +1,11 @@
+<vector android:height="140dp" android:viewportHeight="32"
+    android:viewportWidth="32" android:width="140dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/card_bg_12" android:pathData="M4,15h4v2h-4z"/>
+    <path android:fillColor="@color/card_bg_12" android:pathData="M6.808,8.223l1.414,-1.414l2.828,2.828l-1.414,1.414z"/>
+    <path android:fillColor="@color/card_bg_12" android:pathData="M15,4h2v4h-2z"/>
+    <path android:fillColor="@color/card_bg_12" android:pathData="M20.946,9.639l2.828,-2.828l1.414,1.414l-2.828,2.828z"/>
+    <path android:fillColor="@color/card_bg_12" android:pathData="M24,15h4v2h-4z"/>
+    <path android:fillColor="@color/card_bg_12" android:pathData="M20.945,22.363l1.414,-1.414l2.828,2.828l-1.414,1.414z"/>
+    <path android:fillColor="@color/card_bg_12" android:pathData="M15,24h2v4h-2z"/>
+    <path android:fillColor="@color/card_bg_12" android:pathData="M6.806,23.776l2.828,-2.828l1.414,1.414l-2.828,2.828z"/>
+</vector>

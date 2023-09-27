@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tv_black">#000000</color>
+    <color name="tv_black_50">#80000000</color>
+    <color name="tv_black_03">#4c000000</color>
+    <color name="tv_black_095">#f3000000</color>
+    <color name="tv_white">#eeeeee</color>
+    <color name="tv_transparent">#00000000</color>
+
+    <color name="input_tag_dd_bg_15">#26ffffff</color>
+    <color name="tab_not_selected">#14ffffff</color>
+    <color name="card_bg_12">#1effffff</color>
+    <color name="card_bg_6">#0fffffff</color>
+    <color name="button_bg_20">#33ffffff</color>
+    <color name="dimmed_effect_black_15_image_cover">#26000000</color>
+
+    <color name="gray_gray_250">#e8e8e8</color>
+    <color name="gray_gray_300">#d6d6d6</color>
+    <color name="gray_gray_400">#b7b7b7</color>
+    <color name="gray_gray_500">#8f8f8f</color>
+    <color name="gray_gray_700">#666666</color>
+    <color name="gray_gray_800">#525252</color>
+    <color name="gray_gray_900">#292929</color>
+
+    <color name="primary_green_300">#71cf88</color>
+    <color name="primary_green_400">#26ca54</color>
+    <color name="primary_green_700">#00973e</color>
+    <color name="primary_green_800">#008633</color>
+    <color name="primary_green_900">#005c1b</color>
+
+    <color name="tv_bg">#021018</color>
+
+    <color name="status_orange_600_highlighted">#ffbb55</color>
+    <color name="status_blue_600_highlighted">#628af9</color>
+    <color name="status_red_600_highlighted">#ff3a69</color>
+    <color name="status_red_600">#ff4a4a</color>
+
+    <color name="secondary_ice_blue_700">#709998</color>
+    <color name="secondary_dark_night_400">#494647</color>
+    <color name="secondary_dark_night_500">#3e3c3d</color>
+    <color name="secondary_dark_night_600">#2f2d2e</color>
+    <color name="secondary_dark_night_700">#2f2d2e</color>
+    <color name="secondary_muscle">#d1ffdf</color>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TainLong</string>
+    <string name="api_error">Error de red o error de API</string>
+    <string name="main_title">Tour TainLong</string>
+    <string name="setting_language">Idioma</string>
+    <string name="no_data">No hay datos.</string>
+    <string name="address">Dirección</string>
+    <string name="modified">Última hora de actualización</string>
+    <string name="link">Enlaces relacionados</string>
+    <string name="pictures">Fotos de atracciones</string>
+</resources>

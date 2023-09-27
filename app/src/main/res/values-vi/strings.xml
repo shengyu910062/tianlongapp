@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TainLong</string>
+    <string name="api_error">Lỗi mạng hoặc API không thành công</string>
+    <string name="main_title">Chuyến tham quan TainLong</string>
+    <string name="setting_language">Ngôn ngữ</string>
+    <string name="no_data">Không có dữ liệu.</string>
+    <string name="address">Địa chỉ</string>
+    <string name="modified">Thời gian cập nhật lần cuối</string>
+    <string name="link">Các liên kết liên quan</string>
+    <string name="pictures">Ảnh thu hút</string>
+</resources>

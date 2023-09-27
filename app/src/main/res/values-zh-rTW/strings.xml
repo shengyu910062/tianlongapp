@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TainLong</string>
+    <string name="api_error">網路錯誤或 API 失敗</string>
+    <string name="main_title">天龍導覽</string>
+    <string name="setting_language">語言</string>
+    <string name="no_data">沒有資料。</string>
+    <string name="address">地址</string>
+    <string name="modified">最後更新時間</string>
+    <string name="link">相關連結</string>
+    <string name="pictures">景點照片</string>
+</resources>

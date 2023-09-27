@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.shengyu.tainlong.browse.fragment.AttractionListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".browse.fragment.AttractionDetailFragment">
+
+        <ImageView
+            android:id="@+id/iv_detail_big_image"
+            bigImgUrl="@{viewModel.attractionDetail.images[0].src}"
+            android:layout_width="540dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:src="@android:color/holo_blue_light" />
+
+        <view class="androidx.constraintlayout.widget.ConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="@drawable/mask_horizontal_black" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="104dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/g_detail_start"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.083333" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/g_detail_middle"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.564583" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_detail_title_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@id/g_detail_start"
+                    app:layout_constraintEnd_toEndOf="@id/g_detail_middle"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/HeadingHeading4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="72dp"
+                        android:text="@{viewModel.attractionDetail.name}"
+                        android:textColor="@color/tv_white"
+                        tools:text="Attraction Title" />
+
+                    <TextView
+                        style="@style/BodyB4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:maxWidth="403.5dp"
+                        android:text="@{viewModel.attractionDetail.introduction}"
+                        android:textColor="@color/tv_white"
+                        tools:text="Description string Description stringDescription stringDescription stringDescription stringDescription string Description stringDescription stringDescription string" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_address_title"
+                        style="@style/HeadingHeading7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22.5dp"
+                        android:text="@string/address"
+                        android:textColor="@color/tv_white"
+                        app:layout_constraintStart_toStartOf="@id/g_detail_start"
+                        app:layout_constraintEnd_toEndOf="@id/g_detail_middle"
+                        app:layout_constraintTop_toBottomOf="@id/ll_detail_title_info"
+                        android:visibility="@{viewModel.attractionDetail.address.empty? View.GONE : View.VISIBLE}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_address_content"
+                        style="@style/BodyB4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="@{viewModel.attractionDetail.address}"
+                        android:textColor="@color/tv_white"
+                        app:layout_constraintStart_toStartOf="@id/g_detail_start"
+                        app:layout_constraintEnd_toEndOf="@id/g_detail_middle"
+                        app:layout_constraintTop_toBottomOf="@id/ll_detail_title_info"
+                        android:visibility="@{viewModel.attractionDetail.address.empty? View.GONE : View.VISIBLE}"
+                        tools:text="Between Hankou St and Bo'ai Rd.,Zhongzheng Dist.,Taipei City 100" />
+
+
+                    <TextView
+                        android:id="@+id/tv_detail_modified_title"
+                        style="@style/HeadingHeading7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22.5dp"
+                        android:text="@string/modified"
+                        android:textColor="@color/tv_white"
+                        app:layout_constraintStart_toStartOf="@id/g_detail_start"
+                        app:layout_constraintEnd_toEndOf="@id/g_detail_middle"
+                        app:layout_constraintTop_toBottomOf="@id/ll_detail_title_info"
+                        android:visibility="@{viewModel.attractionDetail.modified.empty? View.GONE : View.VISIBLE}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_modified_content"
+                        style="@style/BodyB4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="@{viewModel.attractionDetail.modified}"
+                        android:textColor="@color/tv_white"
+                        app:layout_constraintStart_toStartOf="@id/g_detail_start"
+                        app:layout_constraintEnd_toEndOf="@id/g_detail_middle"
+                        app:layout_constraintTop_toBottomOf="@id/ll_detail_title_info"
+                        android:visibility="@{viewModel.attractionDetail.modified.empty? View.GONE : View.VISIBLE}"
+                        tools:text="2023-09-25 09:49:33 +08:00" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_url_title"
+                        style="@style/HeadingHeading7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22.5dp"
+                        android:text="@string/link"
+                        android:textColor="@color/tv_white"
+                        app:layout_constraintStart_toStartOf="@id/g_detail_start"
+                        app:layout_constraintEnd_toEndOf="@id/g_detail_middle"
+                        app:layout_constraintTop_toBottomOf="@id/ll_detail_title_info"
+                        android:visibility="@{viewModel.attractionDetail.url.empty? View.GONE : View.VISIBLE}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_url_content"
+                        style="@style/BodyB4M"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="@{viewModel.attractionDetail.url}"
+                        android:textColor="@color/status_blue_600_highlighted"
+                        android:clickable="true"
+                        android:onClick="@{viewModel.clickObservableField}"
+                        app:layout_constraintStart_toStartOf="@id/g_detail_start"
+                        app:layout_constraintEnd_toEndOf="@id/g_detail_middle"
+                        app:layout_constraintTop_toBottomOf="@id/ll_detail_title_info"
+                        android:visibility="@{viewModel.attractionDetail.url.empty? View.GONE : View.VISIBLE}"
+                        tools:text="https://www.travel.taipei/en/attraction/details/599" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <TextView
+                    android:id="@+id/tv_detail_pictures_title"
+                    style="@style/HeadingHeading7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="22.5dp"
+                    android:text="@string/pictures"
+                    android:textColor="@color/tv_white"
+                    app:layout_constraintStart_toStartOf="@id/g_detail_start"
+                    app:layout_constraintTop_toBottomOf="@id/ll_detail_title_info"
+                    android:visibility="@{viewModel.attractionDetail.images.size() == 0 ? View.GONE : View.VISIBLE}" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_detail_pictures"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="@id/g_detail_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_detail_pictures_title"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_picture" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mask_black"
+            android:visibility="@{viewModel.attractionDetailCanScroll? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_detail_scroll_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:layout_marginBottom="41dp"
+                android:src="@drawable/ic_scroll_down"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

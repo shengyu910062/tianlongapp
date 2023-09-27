@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TainLong</string>
+    <string name="api_error">네트워크 오류 또는 API 실패</string>
+    <string name="main_title">테인롱 투어</string>
+    <string name="setting_language">언어</string>
+    <string name="no_data">데이터가 없습니다.</string>
+    <string name="address">주소</string>
+    <string name="modified">마지막 업데이트 시간</string>
+    <string name="link">관련 링크</string>
+    <string name="pictures">명소 사진</string>
+</resources>

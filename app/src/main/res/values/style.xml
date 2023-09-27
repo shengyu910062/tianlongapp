@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    region - Heading-->
+    <style name="HeadingHeading1">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">44sp</item>
+    </style>
+
+    <style name="HeadingHeading2">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <style name="HeadingHeading3">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="HeadingHeading4">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="HeadingHeading5">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="HeadingHeading6Cond">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="HeadingHeading6">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="HeadingHeading7">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="HeadingHeading7Italic">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="HeadingHeading8Cap">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="HeadingHeading8">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="HeadingHeading9Cap">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+
+    <style name="HeadingHeading9">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="HeadingHeading10">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <!--    endregion - Heading-->
+
+    <!--    region - Body-->
+    <style name="BodyB1">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="BodyB2">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="BodyB3">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BodyB4M">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="BodyB4">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="BodyB5M">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BodyB5">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BodyB6Sb">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="BodyB6">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="BodyB7">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+
+    <style name="BodyB8M">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="BodyB8">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+
+    <style name="BodyB8L">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <!--    endregion - Body-->
+
+    <!--    region - Number-->
+    <style name="NumberN1">
+        <!--        <item name="android:fontFamily">@font/outfit_medium</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <style name="NumberN2">
+        <!--        <item name="android:fontFamily">@font/outfit</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="NumberN3">
+        <!--        <item name="android:fontFamily">@font/outfit</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="NumberN3L">
+        <!--        <item name="android:fontFamily">@font/outfit_light</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="NumberN4">
+        <!--        <item name="android:fontFamily">@font/outfit_light</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.07</item>
+    </style>
+
+    <style name="NumberN5">
+        <!--        <item name="android:fontFamily">@font/outfit_light</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+    <!--    endregion - Number-->
+
+    <!--    region - Card-->
+    <style name="CardCardTitle">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CardCardTitle2">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CardCardContent">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!--    endregion - Card-->
+
+    <!--    region - Button-->
+    <style name="ButtonButtonLM">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <style name="ButtonButtonS">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+    <!--    endregion - Button-->
+
+    <!--    region - Other-->
+    <style name="OtherCounting1">
+        <!--        <item name="android:fontFamily">@font/outfit_light</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">100sp</item>
+    </style>
+
+    <style name="OtherCounting2">
+        <!--        <item name="android:fontFamily">@font/outfit_semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="OtherPageTitle">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="OtherPageDescription">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="OtherPageName">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="OtherLvL">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:lineSpacingExtra">-1sp</item>
+    </style>
+
+    <style name="OtherLvS">
+        <!--        <item name="android:fontFamily">sans-serif-semibold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+
+    <style name="OtherLvLCap">
+        <!--        <item name="android:fontFamily">sans-serif-extrabold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">-2sp</item>
+    </style>
+
+    <style name="OtherLvSCap">
+        <!--        <item name="android:fontFamily">sans-serif-extrabold</item>-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+    <!--     endregion - Other-->
+
+    <style name="TranslucentDialog" parent="android:Animation.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+</resources>

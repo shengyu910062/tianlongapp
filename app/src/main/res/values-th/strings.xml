@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TainLong</string>
+    <string name="api_error">ข้อผิดพลาดของเครือข่ายหรือ API ล้มเหลว</string>
+    <string name="main_title">ทัวร์เทนลอง</string>
+    <string name="setting_language">ภาษา</string>
+    <string name="no_data">ไม่มีข้อมูล</string>
+    <string name="address">ที่อยู่</string>
+    <string name="modified">เวลาที่อัปเดตล่าสุด</string>
+    <string name="link">ลิงค์ที่เกี่ยวข้อง</string>
+    <string name="pictures">ภาพถ่ายสถานที่ท่องเที่ยว</string>
+</resources>

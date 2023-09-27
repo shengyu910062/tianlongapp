@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TainLong</string>
+    <string name="api_error">Kesalahan Jaringan atau API Gagal</string>
+    <string name="main_title">Tur TainLong</string>
+    <string name="setting_language">Bahasa</string>
+    <string name="no_data">Tidak ada data.</string>
+    <string name="address">Alamat</string>
+    <string name="modified">Waktu terakhir diperbarui</string>
+    <string name="link">Tautan terkait</string>
+    <string name="pictures">Foto atraksi</string>
+</resources>
