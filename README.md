@@ -2,7 +2,7 @@
 
 全台最尊絕天龍APP上線啦！ 帶你挖掘天龍國各地的風俗民情與大自然的奧妙
 
-Tianlong App 以kotlin開發，採用 MVVM + LiveData 架構
+Tianlong App 以kotlin開發，採用 MVVM + LiveData 架構\n
 景點列表頁面、細節頁面、語言頁面以fragment實作完成，observe LiveData做切換
 連結瀏覽頁面是以singleTask方式開啟的activity
 
