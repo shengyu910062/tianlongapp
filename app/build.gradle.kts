@@ -15,6 +15,10 @@ android {
     namespace = "com.shengyu.tainlong"
     compileSdk = 34
 
+    val majorVersion = 1
+    val minorVersion = 0
+    val microVersion = 1
+
     viewBinding {
         enable = true
     }
@@ -27,8 +31,8 @@ android {
         applicationId = "com.shengyu.tainlong"
         minSdk = 28
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = majorVersion * 1000000 + minorVersion * 10000 + microVersion * 100
+        versionName = "$majorVersion.$minorVersion.$microVersion"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
