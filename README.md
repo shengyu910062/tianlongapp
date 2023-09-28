@@ -2,8 +2,9 @@
 
 <H3>全台最尊絕天龍APP上線啦！ 帶你挖掘天龍國各地的風俗民情與大自然的奧妙</H3>
 <br/>
-DOMO
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uiCSbtlx2Qw?si=8dadlzJj8sn11eF1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![TianLong APP DOMO]          // Title
+()] // Thumbnail
+([https://www.youtube.com/watch?v=Hc79sDi3f0U](https://www.youtube.com/embed/uiCSbtlx2Qw?si=8dadlzJj8sn11eF1) "TianLong APP DOMO") 
 <br/>
 <br/>
 Tianlong App 以kotlin開發，採用 MVVM + LiveData 架構<br/>
