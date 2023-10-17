@@ -5,10 +5,11 @@
 package com.shengyu.tianlong.util
 
 import android.content.res.Resources
-import android.os.Looper
 import android.widget.Toast
 import com.shengyu.tianlong.R
 import com.shengyu.tianlong.network.DataResult
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import retrofit2.Response
 
 const val TAG = "Extension"
@@ -43,7 +44,7 @@ inline fun <reified T> getDataResult(response: Response<T>): DataResult<T> {
 /**
  * Handle response from API
  */
-fun <T : Any> apiDo(
+suspend fun <T : Any> apiDo(
     data: DataResult<T?>,
     successDo: ((successObj: T) -> Unit)? = null,
     failDo: ((error: String) -> Unit)? = null
@@ -51,13 +52,13 @@ fun <T : Any> apiDo(
     when (data) {
         is DataResult.Error -> {
             failDo?.let { it(data.error) } ?: run {
-                Looper.prepare()
-                Toast.makeText(
-                    ResourceProvider.getContext(),
-                    R.string.api_error,
-                    Toast.LENGTH_SHORT
-                ).show()
-                Looper.loop()
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(
+                        ResourceProvider.getContext(),
+                        R.string.api_error,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
         }
 

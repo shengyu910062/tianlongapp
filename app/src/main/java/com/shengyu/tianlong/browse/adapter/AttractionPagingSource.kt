@@ -4,10 +4,13 @@
 
 package com.shengyu.tianlong.browse.adapter
 
+import android.widget.Toast
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.shengyu.tianlong.R
 import com.shengyu.tianlong.network.ApiManager
 import com.shengyu.tianlong.network.model.Data
+import com.shengyu.tianlong.util.ResourceProvider
 import com.shengyu.tianlong.util.apiDo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -35,7 +38,7 @@ class AttractionPagingSource(
             val nextPageNumber = params.key ?: 1
 
             return suspendCoroutine { loadResult ->
-                CoroutineScope(Dispatchers.IO).launch {
+                CoroutineScope(Dispatchers.Main).launch {
                     apiManager.getAttractions(lang, nextPageNumber).apply {
                         apiDo(this, { response ->
                             loadResult.resume(
@@ -45,6 +48,14 @@ class AttractionPagingSource(
                                     nextKey = nextPageNumber + 1
                                 )
                             )
+                        }, {
+                            Toast.makeText(
+                                ResourceProvider.getContext(),
+                                ResourceProvider.getString(R.string.api_error) + " : " + it,
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            loadResult.resume(LoadResult.Error(Exception(it)))
                         })
                     }
                 }

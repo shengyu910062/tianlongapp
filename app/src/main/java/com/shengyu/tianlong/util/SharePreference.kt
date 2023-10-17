@@ -67,10 +67,10 @@ open class SharePreference protected constructor(context: Context) {
          */
         private var systemLanguage: String = ""
             get() {
-                return if (Locale.getDefault().language.equals("zh")) {
-                    Locale.getDefault().language + "_" + Locale.getDefault().country
+                return if (Locale.getDefault().language.lowercase().equals("zh")) {
+                    Locale.getDefault().language.lowercase() + "_" + Locale.getDefault().country.lowercase()
                 } else {
-                    Locale.getDefault().language
+                    Locale.getDefault().language.lowercase()
                 }
             }
 
