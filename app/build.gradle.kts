@@ -17,7 +17,7 @@ android {
 
     val majorVersion = 1
     val minorVersion = 0
-    val microVersion = 1
+    val microVersion = 2
 
     viewBinding {
         enable = true
