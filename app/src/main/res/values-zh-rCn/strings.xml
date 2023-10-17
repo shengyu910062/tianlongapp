@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TainLong</string>
+    <string name="app_name">TianLong</string>
     <string name="api_error">网络错误或 API 失败</string>
     <string name="main_title">天龙导览</string>
     <string name="setting_language">语言</string>

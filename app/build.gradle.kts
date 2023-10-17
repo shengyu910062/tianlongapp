@@ -12,7 +12,7 @@ android {
         viewBinding = true
     }
 
-    namespace = "com.shengyu.tainlong"
+    namespace = "com.shengyu.tianlong"
     compileSdk = 34
 
     val majorVersion = 1
@@ -28,7 +28,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.shengyu.tainlong"
+        applicationId = "com.shengyu.tianlong"
         minSdk = 28
         targetSdk = 34
         versionCode = majorVersion * 1000000 + minorVersion * 10000 + microVersion * 100

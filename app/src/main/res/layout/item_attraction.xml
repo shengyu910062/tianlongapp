@@ -9,7 +9,7 @@
 
         <variable
             name="model"
-            type="com.shengyu.tainlong.network.model.Data" />
+            type="com.shengyu.tianlong.network.model.Data" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

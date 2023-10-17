@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.shengyu.tainlong.browse.fragment.AttractionListViewModel" />
+            type="com.shengyu.tianlong.browse.fragment.AttractionListViewModel" />
 
         <import type="android.view.View" />
     </data>

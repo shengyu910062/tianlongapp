@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TainLong</string>
+    <string name="app_name">TianLong</string>
     <string name="api_error">ネットワーク エラーまたは API が失敗しました</string>
     <string name="main_title">テインロング ツアー</string>
     <string name="setting_language">言語</string>

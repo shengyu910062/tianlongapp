@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">TainLong</string>
+    <string name="app_name">TianLong</string>
     <string name="api_error">Network Error or API Failed</string>
-    <string name="main_title">TainLong Tour</string>
+    <string name="main_title">TianLong Tour</string>
     <string name="setting_language">Language</string>
     <string name="no_data">There is no data.</string>
     <string name="address">Address</string>

@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">TainLong</string>
+    <string name="app_name">TianLong</string>
     <string name="api_error">Kesalahan Jaringan atau API Gagal</string>
-    <string name="main_title">Tur TainLong</string>
+    <string name="main_title">Tur TianLong</string>
     <string name="setting_language">Bahasa</string>
     <string name="no_data">Tidak ada data.</string>
     <string name="address">Alamat</string>

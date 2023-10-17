@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TainLong</string>
+    <string name="app_name">TianLong</string>
     <string name="api_error">ข้อผิดพลาดของเครือข่ายหรือ API ล้มเหลว</string>
     <string name="main_title">ทัวร์เทนลอง</string>
     <string name="setting_language">ภาษา</string>

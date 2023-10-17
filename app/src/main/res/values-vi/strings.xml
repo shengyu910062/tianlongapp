@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">TainLong</string>
+    <string name="app_name">TianLong</string>
     <string name="api_error">Lỗi mạng hoặc API không thành công</string>
-    <string name="main_title">Chuyến tham quan TainLong</string>
+    <string name="main_title">Chuyến tham quan TianLong</string>
     <string name="setting_language">Ngôn ngữ</string>
     <string name="no_data">Không có dữ liệu.</string>
     <string name="address">Địa chỉ</string>

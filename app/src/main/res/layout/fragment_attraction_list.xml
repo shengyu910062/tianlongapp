@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.shengyu.tainlong.browse.fragment.AttractionListViewModel" />
+            type="com.shengyu.tianlong.browse.fragment.AttractionListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
