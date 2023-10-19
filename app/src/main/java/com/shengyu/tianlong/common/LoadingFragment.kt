@@ -19,7 +19,7 @@ import com.shengyu.tianlong.databinding.FragmentLoadingBinding
  * Common component for display loading
  */
 class LoadingFragment : DialogFragment() {
-    private lateinit var mBinding: FragmentLoadingBinding
+    private lateinit var binding: FragmentLoadingBinding
 
     companion object {
         fun newInstance(): LoadingFragment {
@@ -33,7 +33,7 @@ class LoadingFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         val rootView = inflater.inflate(R.layout.fragment_loading, container, false)
-        mBinding = DataBindingUtil.bind(rootView)!!
+        binding = DataBindingUtil.bind(rootView)!!
         isCancelable = false
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         return rootView
@@ -41,11 +41,11 @@ class LoadingFragment : DialogFragment() {
 
     override fun onResume() {
         super.onResume()
-        mBinding.lavLoading.playAnimation()
+        binding.lavLoading.playAnimation()
     }
 
     override fun onPause() {
         super.onPause()
-        mBinding.lavLoading.clearAnimation()
+        binding.lavLoading.clearAnimation()
     }
 }

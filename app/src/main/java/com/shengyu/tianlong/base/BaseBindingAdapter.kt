@@ -17,15 +17,15 @@ import androidx.recyclerview.widget.RecyclerView
  */
 abstract class BaseBindingAdapter<M, VDB : ViewDataBinding> :
     RecyclerView.Adapter<BaseBindingAdapter.BaseBindingViewHolder>() {
-    var mList: ArrayList<M> = arrayListOf()
+    var adapterList: ArrayList<M> = arrayListOf()
 
     /**
      * Append items to adapter list
      */
     open fun addList(list: ArrayList<M>) {
-        val startPosition = mList.size
-        mList.addAll(list)
-        notifyItemRangeInserted(startPosition, mList.size)
+        val startPosition = adapterList.size
+        adapterList.addAll(list)
+        notifyItemRangeInserted(startPosition, adapterList.size)
     }
 
     /**
@@ -33,16 +33,16 @@ abstract class BaseBindingAdapter<M, VDB : ViewDataBinding> :
      */
     open fun setList(list: List<M>) {
         clearList()
-        mList.addAll(list)
-        notifyItemRangeChanged(0, mList.count())
+        adapterList.addAll(list)
+        notifyItemRangeChanged(0, adapterList.count())
     }
 
     /**
      * Clear all items from adapter list
      */
     open fun clearList() {
-        val previousSize = mList.size
-        mList.clear()
+        val previousSize = adapterList.size
+        adapterList.clear()
         notifyItemRangeRemoved(0, previousSize)
     }
 
@@ -50,8 +50,8 @@ abstract class BaseBindingAdapter<M, VDB : ViewDataBinding> :
      * Remove specific items from adapter list
      */
     open fun remove(position: Int) {
-        if (mList.size > position) {
-            mList.removeAt(position)
+        if (adapterList.size > position) {
+            adapterList.removeAt(position)
         }
     }
 
@@ -59,7 +59,7 @@ abstract class BaseBindingAdapter<M, VDB : ViewDataBinding> :
      * Fetch adapter list
      */
     fun getList(): ArrayList<M> {
-        return mList
+        return adapterList
     }
 
     class BaseBindingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -77,11 +77,11 @@ abstract class BaseBindingAdapter<M, VDB : ViewDataBinding> :
 
     override fun onBindViewHolder(holder: BaseBindingViewHolder, position: Int) {
         val binding: VDB? = DataBindingUtil.getBinding(holder.itemView)
-        this.onBindItem(binding, this.mList[position], position)
+        this.onBindItem(binding, adapterList[position], position)
     }
 
     override fun getItemCount(): Int {
-        return this.mList.size
+        return adapterList.size
     }
 
     @LayoutRes

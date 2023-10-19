@@ -28,11 +28,11 @@ class AttractionListFragment : BaseFragment<FragmentAttractionListBinding>() {
         fun newInstance() = AttractionListFragment()
     }
 
-    private val mViewModel: AttractionListViewModel by activityViewModels()
+    private val viewModel: AttractionListViewModel by activityViewModels()
 
-    private val mAdapter by lazy {
+    private val attractionAdapter by lazy {
         AttractionAdapter({
-            mViewModel.attractionDetail.postValue(it)
+            viewModel.attractionDetail.postValue(it)
         }, AttractionComparator)
     }
 
@@ -43,12 +43,12 @@ class AttractionListFragment : BaseFragment<FragmentAttractionListBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(mBinding) {
-            viewModel = mViewModel
-            rvAttractionList.adapter = mAdapter
+        with(binding) {
+            viewModel = viewModel
+            rvAttractionList.adapter = attractionAdapter
         }
 
-        with(mViewModel) {
+        with(viewModel) {
             setLoadingObserver(this)
 
             // api observer
@@ -56,7 +56,7 @@ class AttractionListFragment : BaseFragment<FragmentAttractionListBinding>() {
                 // Fetch paging attractions data
                 flow.collectLatest { pagingData ->
                     viewLifecycleOwner.lifecycleScope.launch {
-                        mAdapter.loadStateFlow.collectLatest { loadStates ->
+                        attractionAdapter.loadStateFlow.collectLatest { loadStates ->
                             if (loadStates.refresh is LoadState.Loading) {
                                 loading.postValue(true)
                             } else {
@@ -65,8 +65,8 @@ class AttractionListFragment : BaseFragment<FragmentAttractionListBinding>() {
                         }
                     }
 
-                    mAdapter.submitData(pagingData)
-                    attractionDataEmpty.value = mAdapter.itemCount == 0
+                    attractionAdapter.submitData(pagingData)
+                    attractionDataEmpty.value = attractionAdapter.itemCount == 0
                 }
             }
         }

@@ -25,11 +25,11 @@ import com.shengyu.tianlong.util.SharePreference
  * DialogFragment for choose language
  */
 class LanguageChooseDialogFragment : DialogFragment() {
-    private lateinit var mBinding: DialogLanguageChooseBinding
-    private val mParentViewModel: AttractionListViewModel by activityViewModels()
-    private val mLanguageAdapter: LanguageAdapter by lazy {
+    private lateinit var binding: DialogLanguageChooseBinding
+    private val parentViewModel: AttractionListViewModel by activityViewModels()
+    private val languageAdapter: LanguageAdapter by lazy {
         LanguageAdapter {
-            mParentViewModel.mCurrentLanguage.postValue(it.id)
+            parentViewModel.currentLanguage.postValue(it.id)
             if (SharePreference.USE_LOCAL_LANGUAGE_SETTING) {
                 SharePreference.localLanguage = it.id
             } else {
@@ -41,31 +41,31 @@ class LanguageChooseDialogFragment : DialogFragment() {
     }
 
     override fun onCreateView(
-        aInflater: LayoutInflater,
-        aContainer: ViewGroup?,
-        aSavedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
-        mBinding = DialogLanguageChooseBinding.inflate(aInflater, aContainer, false)
-        mBinding.apply {
-            languageList.scrollToPosition(mLanguageAdapter.getInitPosition(mParentViewModel.mCurrentLanguage.value!!))
-            languageList.adapter = mLanguageAdapter
+        binding = DialogLanguageChooseBinding.inflate(inflater, container, false)
+        binding.apply {
+            languageList.scrollToPosition(languageAdapter.getInitPosition(parentViewModel.currentLanguage.value!!))
+            languageList.adapter = languageAdapter
             clLanguageChooserLayout.setOnClickListener {
                 dismiss()
             }
         }
 
-        return mBinding.root
+        return binding.root
     }
 
-    override fun onCreate(aSavedInstanceState: Bundle?) {
-        super.onCreate(aSavedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setStyle(STYLE_NO_FRAME, R.style.TranslucentDialog)
     }
 
-    override fun onCreateDialog(aSavedInstanceState: Bundle?): Dialog {
-        val dialog = super.onCreateDialog(aSavedInstanceState)
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = super.onCreateDialog(savedInstanceState)
 
-        if (aSavedInstanceState == null) {
+        if (savedInstanceState == null) {
             dialog.window?.setWindowAnimations(
                 R.style.Theme_TianLong_CustomDialogFragment
             )

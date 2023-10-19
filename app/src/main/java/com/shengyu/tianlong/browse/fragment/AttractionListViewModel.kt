@@ -26,7 +26,7 @@ import javax.inject.Inject
 class AttractionListViewModel @Inject constructor(
     private val apiManager: ApiManager
 ) : BaseViewModel() {
-    val mCurrentLanguage = MutableLiveData(SharePreference.language)
+    val currentLanguage = MutableLiveData(SharePreference.language)
 
     val attractionDataEmpty = MutableLiveData<Boolean?>(null)
     val attractionDetail = MutableLiveData<Data?>(null)

@@ -30,8 +30,8 @@ class AttractionDetailFragment : BaseFragment<FragmentAttractionDetailBinding>()
         const val DETAIL_BOTTOM_HINT_DURATION = 1500L
     }
 
-    private val mViewModel: AttractionListViewModel by activityViewModels()
-    private val mPictureAdapter: PictureAdapter by lazy { PictureAdapter() }
+    private val viewModel: AttractionListViewModel by activityViewModels()
+    private val pictureAdapter: PictureAdapter by lazy { PictureAdapter() }
 
     override fun getLayoutId(): Int {
         return R.layout.fragment_attraction_detail
@@ -40,11 +40,11 @@ class AttractionDetailFragment : BaseFragment<FragmentAttractionDetailBinding>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(mBinding) {
-            rvDetailPictures.adapter = mPictureAdapter
+        with(binding) {
+            rvDetailPictures.adapter = pictureAdapter
 
-            viewModel = mViewModel
-            setLoadingObserver(mViewModel)
+            viewModel = this@AttractionDetailFragment.viewModel
+            setLoadingObserver(this@AttractionDetailFragment.viewModel)
 
             nsvDetail.viewTreeObserver.addOnDrawListener {
                 updateCanScrollState()
@@ -64,7 +64,7 @@ class AttractionDetailFragment : BaseFragment<FragmentAttractionDetailBinding>()
             }
         }
 
-        with(mViewModel) {
+        with(viewModel) {
             // data observer
             attractionDetail.observe(viewLifecycleOwner) {
                 it?.apply {
@@ -72,7 +72,7 @@ class AttractionDetailFragment : BaseFragment<FragmentAttractionDetailBinding>()
                         TAG,
                         "attractionDetail UPDATE, setup images, list size" + it.images.size
                     )
-                    mPictureAdapter.setList(
+                    pictureAdapter.setList(
                         it.images
                     )
                 }
@@ -85,7 +85,7 @@ class AttractionDetailFragment : BaseFragment<FragmentAttractionDetailBinding>()
                         startActivity(Intent(requireContext(), ViewLinkActivity::class.java).apply {
                             putExtra(
                                 ViewLinkActivity.KEY_LINK_URL,
-                                mViewModel.attractionDetail.value?.url
+                                viewModel.attractionDetail.value?.url
                             )
                         })
                     }
@@ -99,8 +99,8 @@ class AttractionDetailFragment : BaseFragment<FragmentAttractionDetailBinding>()
      * to determine whether the screen can be scrolled
      */
     private fun updateCanScrollState() {
-        val contentHeight = mBinding.nsvDetail.getChildAt(0).height
-        mViewModel.attractionDetailCanScroll.value =
-            contentHeight > mBinding.nsvDetail.scrollY + mBinding.nsvDetail.height
+        val contentHeight = binding.nsvDetail.getChildAt(0).height
+        viewModel.attractionDetailCanScroll.value =
+            contentHeight > binding.nsvDetail.scrollY + binding.nsvDetail.height
     }
 }

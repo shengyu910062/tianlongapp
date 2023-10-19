@@ -9,23 +9,18 @@ import android.util.Log
 /**
  * Wrapper around the android logger
  */
-object Logger {
-    // ------------------------------------------------------------------------
-    // STATIC DATA
-    // ------------------------------------------------------------------------
-    private var sTagPrefix: String? = ""
-    private var sLogToCrashlytics = false
-    private const val sMaxCharCount = 1000
 
-    // ------------------------------------------------------------------------
-    // STATIC METHODS
-    // ------------------------------------------------------------------------
+private var tagPrefix: String? = ""
+private var logToCrashlytics = false
+private const val MAX_CHAR_COUNT = 1000
+
+object Logger {
     /**
      * Sets whether to send logs to crashlytics
      * @param aLogToCrashlytics set to true if you want logs to be sent to crashlytics
      */
     fun setLogToCrashlytics(aLogToCrashlytics: Boolean) {
-        sLogToCrashlytics = aLogToCrashlytics
+        logToCrashlytics = aLogToCrashlytics
     }
 
     fun e(aTag: String?, aMessage: String) {
@@ -72,13 +67,12 @@ object Logger {
         var theIndex = 0
         while (theIndex < aMessage.length) {
             val theNewLineIndex = aMessage.indexOf('\n', theIndex)
-            var theEndIndex: Int
-            theEndIndex = if (theNewLineIndex == -1) {
+            var theEndIndex: Int = if (theNewLineIndex == -1) {
                 aMessage.length
             } else {
                 theNewLineIndex
             }
-            theEndIndex = Math.min(theIndex + sMaxCharCount, theEndIndex)
+            theEndIndex = Math.min(theIndex + MAX_CHAR_COUNT, theEndIndex)
             val theSubMessage = aMessage.substring(theIndex, theEndIndex)
             Log.println(aPriority, aTag, theSubMessage)
             theIndex += theSubMessage.length
@@ -89,10 +83,10 @@ object Logger {
     }
 
     fun setTagPrefix(aTagPrefix: String?) {
-        sTagPrefix = aTagPrefix
+        tagPrefix = aTagPrefix
     }
 
-    private fun getPrefixedTag(aTag: String?): String? {
-        return sTagPrefix + aTag
+    private fun getPrefixedTag(aTag: String?): String {
+        return tagPrefix + aTag
     }
 }

@@ -37,7 +37,7 @@ class ViewLinkActivity : BaseActivity<ActivityViewLinkBinding>() {
         super.onCreate(savedInstanceState)
 
         showLoadingDialog()
-        with(mBinding.webView) {
+        with(binding.webView) {
             setBackgroundColor(ResourceProvider.getColor(R.color.tv_bg))
 
             with(settings) {
@@ -70,7 +70,7 @@ class ViewLinkActivity : BaseActivity<ActivityViewLinkBinding>() {
             }
         }
 
-        with(mBinding) {
+        with(binding) {
             ibToolbarBack.setOnClickListener {
                 if (webView.canGoBack()) {
                     webView.goBack()
@@ -83,8 +83,8 @@ class ViewLinkActivity : BaseActivity<ActivityViewLinkBinding>() {
 
     // Trigger webview previous page
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK && mBinding.webView.canGoBack()) {
-            mBinding.webView.goBack()
+        if (keyCode == KeyEvent.KEYCODE_BACK && binding.webView.canGoBack()) {
+            binding.webView.goBack()
             return true
         }
         return super.onKeyDown(keyCode, event)

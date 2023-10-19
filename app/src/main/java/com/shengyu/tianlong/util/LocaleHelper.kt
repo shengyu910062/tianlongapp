@@ -15,13 +15,13 @@ import java.util.*
 class LocaleHelper {
 
     companion object {
-        const val LANGUAGE_CODE_DELIMITER = "_"
+        private const val LANGUAGE_CODE_DELIMITER = "_"
 
         fun setLocale(context: Context, language: String): Context {
 
-            var localeLanguage = language.substringBefore(LANGUAGE_CODE_DELIMITER, language)
-            var localeCountry = language.substringAfter(LANGUAGE_CODE_DELIMITER, language)
-            var locale = Locale(localeLanguage, localeCountry)
+            val localeLanguage = language.substringBefore(LANGUAGE_CODE_DELIMITER, language)
+            val localeCountry = language.substringAfter(LANGUAGE_CODE_DELIMITER, language)
+            val locale = Locale(localeLanguage, localeCountry)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 return updateResources(context, locale)
             }

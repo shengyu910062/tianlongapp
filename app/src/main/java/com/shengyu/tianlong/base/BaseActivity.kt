@@ -20,8 +20,8 @@ import com.shengyu.tianlong.util.TAG
  */
 abstract class BaseActivity<VDB : ViewDataBinding> : FragmentActivity() {
 
-    lateinit var mBinding: VDB
-    private val mLoadingFragment: LoadingFragment by lazy {
+    lateinit var binding: VDB
+    private val loadingFragment: LoadingFragment by lazy {
         LoadingFragment.newInstance()
     }
 
@@ -33,17 +33,17 @@ abstract class BaseActivity<VDB : ViewDataBinding> : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = DataBindingUtil.setContentView(this, getLayoutId())
-        mBinding.lifecycleOwner = this
+        binding = DataBindingUtil.setContentView(this, getLayoutId())
+        binding.lifecycleOwner = this
     }
 
     /**
      * Hide loading
      */
     protected fun hideLoadingDialog() {
-        if (mLoadingFragment.dialog?.isShowing == true) {
+        if (loadingFragment.dialog?.isShowing == true) {
             try {
-                mLoadingFragment.dismiss()
+                loadingFragment.dismiss()
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -54,11 +54,11 @@ abstract class BaseActivity<VDB : ViewDataBinding> : FragmentActivity() {
      * show loading
      */
     protected fun showLoadingDialog(): Boolean {
-        if (mLoadingFragment.dialog?.isShowing == true || mLoadingFragment.isVisible || mLoadingFragment.isAdded) {
+        if (loadingFragment.dialog?.isShowing == true || loadingFragment.isVisible || loadingFragment.isAdded) {
             return true
         }
-        supportFragmentManager.beginTransaction().remove(mLoadingFragment).commit()
-        mLoadingFragment.show(supportFragmentManager, TAG)
+        supportFragmentManager.beginTransaction().remove(loadingFragment).commit()
+        loadingFragment.show(supportFragmentManager, TAG)
         return false
     }
 

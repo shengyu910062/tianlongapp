@@ -23,7 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
     // TODO call mViewModel to do API config in the future
-    private val mViewModel: SplashViewModel by viewModels()
+    private val viewModel: SplashViewModel by viewModels()
 
     override fun getLayoutId(): Int {
         return R.layout.activity_splash

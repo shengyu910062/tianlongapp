@@ -24,9 +24,9 @@ import dagger.hilt.android.AndroidEntryPoint
  **/
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
-    private val mViewModel: AttractionListViewModel by viewModels()
-    private lateinit var mChildFragmentManager: FragmentManager
-    private lateinit var mAttractionListFragment: AttractionListFragment
+    private val viewModel: AttractionListViewModel by viewModels()
+    private lateinit var childFragmentManager: FragmentManager
+    private lateinit var attractionListFragment: AttractionListFragment
 
     override fun getLayoutId(): Int {
         return R.layout.activity_main
@@ -34,26 +34,26 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mChildFragmentManager = supportFragmentManager
-        mBinding.viewModel = mViewModel
-        mAttractionListFragment = AttractionListFragment.newInstance()
+        childFragmentManager = supportFragmentManager
+        binding.viewModel = viewModel
+        attractionListFragment = AttractionListFragment.newInstance()
 
-        with(mViewModel) {
+        with(viewModel) {
             setLoadingObserver(this)
 
             // data observer
             attractionDetail.observe(this@MainActivity) { attraction ->
                 if (attraction == null) {
                     Logger.d(TAG, "Enter Attraction List Mode")
-                    mChildFragmentManager.beginTransaction().setCustomAnimations(
+                    childFragmentManager.beginTransaction().setCustomAnimations(
                         R.anim.fade_in,
                         R.anim.slide_out,
                         R.anim.slide_in,
                         R.anim.fade_out
-                    ).replace(R.id.main_browse_fragment, mAttractionListFragment).commit()
+                    ).replace(R.id.main_browse_fragment, attractionListFragment).commit()
                 } else {
                     Logger.d(TAG, "Enter Attraction Detail, id : " + attraction.id)
-                    mChildFragmentManager.beginTransaction().setCustomAnimations(
+                    childFragmentManager.beginTransaction().setCustomAnimations(
                         R.anim.slide_in,
                         R.anim.fade_out,
                         R.anim.fade_in,
@@ -68,7 +68,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 when (it) {
                     R.id.ib_language_chooser -> {
                         LanguageChooseDialogFragment().apply {
-                            show(mChildFragmentManager, TAG)
+                            show(this@MainActivity.childFragmentManager, TAG)
                         }
                     }
 
@@ -81,8 +81,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK && mViewModel.attractionDetail.value != null) {
-            mViewModel.attractionDetail.postValue(null)
+        if (keyCode == KeyEvent.KEYCODE_BACK && viewModel.attractionDetail.value != null) {
+            viewModel.attractionDetail.postValue(null)
             return true
         }
         return super.onKeyDown(keyCode, event)

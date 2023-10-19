@@ -24,7 +24,7 @@ class ApiManager {
         const val API_TIMEOUT_LIMIT = 30L
     }
 
-    private val mApiService: ApiService
+    private val apiService: ApiService
 
     init {
         var logging = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
@@ -44,13 +44,13 @@ class ApiManager {
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-        mApiService = retrofit.create(ApiService::class.java)
+        apiService = retrofit.create(ApiService::class.java)
     }
 
     val API: ApiService
-        get() = mApiService
+        get() = apiService
 
     suspend fun getAttractions(lang: String, page: Int): DataResult<Attractions> {
-        return getDataResult(mApiService.getAttractions(lang, page))
+        return getDataResult(apiService.getAttractions(lang, page))
     }
 }

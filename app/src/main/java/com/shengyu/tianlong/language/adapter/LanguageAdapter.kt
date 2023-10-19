@@ -18,7 +18,7 @@ import com.shengyu.tianlong.util.TAG
  */
 class LanguageAdapter(val clickDo: (model: BaseConfigItem) -> Unit) :
     BaseBindingAdapter<BaseConfigItem, ItemLanguageBinding>() {
-    private var mInitPosition: Int = 0 // Record current language position
+    private var initPosition: Int = 0 // Record current language position
 
     init {
         setList(getLanguageList())
@@ -45,17 +45,17 @@ class LanguageAdapter(val clickDo: (model: BaseConfigItem) -> Unit) :
     /* Focus on current language item */
     override fun onViewAttachedToWindow(aHolder: BaseBindingViewHolder) {
         super.onViewAttachedToWindow(aHolder)
-        if (aHolder.bindingAdapterPosition == mInitPosition) {
+        if (aHolder.bindingAdapterPosition == initPosition) {
             aHolder.itemView.requestFocus()
         }
     }
 
     /* Get current language position at list, and record it */
     fun getInitPosition(aSettingLanguage: String): Int {
-        mList.forEachIndexed { i, language ->
+        adapterList.forEachIndexed { i, language ->
             if (language.id == aSettingLanguage) {
                 Logger.d(TAG, "Init language : $aSettingLanguage , index$i")
-                mInitPosition = i
+                initPosition = i
                 return i
             }
         }

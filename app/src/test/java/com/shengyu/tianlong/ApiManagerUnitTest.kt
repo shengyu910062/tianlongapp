@@ -6,6 +6,7 @@ package com.shengyu.tianlong
 
 import com.shengyu.tianlong.network.ApiManager
 import com.shengyu.tianlong.network.DataResult
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.junit.Assert.assertNotNull
@@ -16,9 +17,10 @@ import org.junit.Test
  */
 class ApiManagerUnitTest {
 
+    @OptIn(DelicateCoroutinesApi::class)
     @Test
     fun getAttractionsIsCorrect() {
-        var mApiManager = ApiManager()
+        val mApiManager = ApiManager()
         GlobalScope.launch {
             mApiManager.getAttractions("zh-tw", 1).apply {
                 when (this) {

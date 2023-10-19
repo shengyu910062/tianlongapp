@@ -19,7 +19,7 @@ import java.util.Locale
  */
 open class SharePreference protected constructor(context: Context) {
     init {
-        mSharedPreference = context.getSharedPreferences(PREF_FILE, Context.MODE_PRIVATE)
+        sharedPreference = context.getSharedPreferences(PREF_FILE, Context.MODE_PRIVATE)
     }
 
     companion object {
@@ -28,26 +28,25 @@ open class SharePreference protected constructor(context: Context) {
         private const val PREF_KEY_LOCAL_LANGUAGE = "PREF_KEY_LOCAL_LANGUAGE"
         const val USE_LOCAL_LANGUAGE_SETTING = true
 
-        protected var sInst: SharePreference? = null
-        protected var mSharedPreference: SharedPreferences? = null
+        protected var inst: SharePreference? = null
+        protected var sharedPreference: SharedPreferences? = null
 
         fun createInstance(context: Context) {
-            if (sInst == null) {
-                sInst = SharePreference(context)
+            if (inst == null) {
+                inst = SharePreference(context)
             }
         }
 
         val language: String
             get() {
-                var result: String
-                if (USE_LOCAL_LANGUAGE_SETTING) {
-                    result = if (localLanguage.isNullOrBlank()) {
+                val result: String = if (USE_LOCAL_LANGUAGE_SETTING) {
+                    if (localLanguage.isBlank()) {
                         systemLanguage
                     } else {
                         localLanguage
                     }
                 } else {
-                    result = LanguageCode.ZH_TW.code
+                    LanguageCode.ZH_TW.code
                 }
 
                 return result
@@ -65,7 +64,7 @@ open class SharePreference protected constructor(context: Context) {
         /**
          * System language record
          */
-        private var systemLanguage: String = ""
+        private val systemLanguage: String
             get() {
                 return if (Locale.getDefault().language.lowercase().equals("zh")) {
                     Locale.getDefault().language.lowercase() + "_" + Locale.getDefault().country.lowercase()
@@ -76,41 +75,41 @@ open class SharePreference protected constructor(context: Context) {
 
         // region SharedPreference put and get function
         private fun putString(key: String, value: String) {
-            mSharedPreference?.edit()
+            sharedPreference?.edit()
                 ?.putString(key, value)
                 ?.apply()
         }
 
         private fun getString(key: String): String {
-            return mSharedPreference?.getString(key, "") ?: ""
+            return sharedPreference?.getString(key, "") ?: ""
         }
 
         private fun getInt(key: String, defaultValue: Int = 0): Int {
-            return mSharedPreference?.getInt(key, defaultValue) ?: 0
+            return sharedPreference?.getInt(key, defaultValue) ?: 0
         }
 
         private fun putInt(key: String, value: Int) {
-            mSharedPreference?.edit()
+            sharedPreference?.edit()
                 ?.putInt(key, value)
                 ?.apply()
         }
 
         private fun getLong(key: String, defaultValue: Long = 0): Long {
-            return mSharedPreference?.getLong(key, defaultValue) ?: 0L
+            return sharedPreference?.getLong(key, defaultValue) ?: 0L
         }
 
         private fun putLong(key: String, value: Long) {
-            mSharedPreference?.edit()
+            sharedPreference?.edit()
                 ?.putLong(key, value)
                 ?.apply()
         }
 
         private fun getBoolean(key: String, defaultValue: Boolean = false): Boolean {
-            return mSharedPreference?.getBoolean(key, defaultValue) ?: defaultValue
+            return sharedPreference?.getBoolean(key, defaultValue) ?: defaultValue
         }
 
         private fun putBoolean(key: String, value: Boolean) {
-            mSharedPreference?.edit()
+            sharedPreference?.edit()
                 ?.putBoolean(key, value)
                 ?.apply()
         }
@@ -149,7 +148,7 @@ open class SharePreference protected constructor(context: Context) {
          * @param key Key with which Shared preferences to
          **/
         private fun <T> parseArray(key: String, typeToken: Type): T? {
-            val json = mSharedPreference?.getString(key, null) ?: return null
+            val json = sharedPreference?.getString(key, null) ?: return null
             val gson = GsonBuilder().create()
             return gson.fromJson(json, typeToken)
         }

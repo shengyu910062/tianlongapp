@@ -22,74 +22,73 @@ import androidx.core.content.res.ResourcesCompat
 /**
  * Common resource provider
  *
- * @param context MainApplication context
+ * @param applicationContext MainApplication context
  */
-open class ResourceProvider private constructor(context: Context) {
+open class ResourceProvider private constructor(applicationContext: Context) {
 
     init {
-        mContext = LocaleHelper.setLocale(context, SharePreference.language)
+        context = LocaleHelper.setLocale(applicationContext, SharePreference.language)
     }
 
     companion object {
         @SuppressLint("StaticFieldLeak")
-        private lateinit var mContext: Context
+        private lateinit var context: Context
 
         @SuppressLint("StaticFieldLeak")
-        protected var sInst: ResourceProvider? = null
-
+        protected var inst: ResourceProvider? = null
 
         fun createInstance(context: Context) {
-            if (sInst == null) {
-                sInst = ResourceProvider(context)
+            if (inst == null) {
+                inst = ResourceProvider(context)
             }
         }
 
         fun refreshLanguage() {
-            mContext = LocaleHelper.setLocale(mContext, SharePreference.language)
+            context = LocaleHelper.setLocale(context, SharePreference.language)
         }
 
         fun getContext(): Context {
-            return mContext
+            return context
         }
 
         fun getString(resId: Int): String {
-            return mContext.getString(resId)
+            return context.getString(resId)
         }
 
         fun getString(resId: Int, value: String): String {
-            return mContext.getString(resId, value)
+            return context.getString(resId, value)
         }
 
         fun getColor(resId: Int): Int {
-            return ContextCompat.getColor(mContext, resId)
+            return ContextCompat.getColor(context, resId)
         }
 
         fun getDrawable(resID: Int): Drawable {
-            return ContextCompat.getDrawable(mContext, resID)!!
+            return ContextCompat.getDrawable(context, resID)!!
         }
 
         fun getInt(resId: Int): Int {
-            return mContext.resources.getInteger(resId)
+            return context.resources.getInteger(resId)
         }
 
         fun getStringArray(resId: Int): Array<String> {
-            return mContext.resources.getStringArray(resId)
+            return context.resources.getStringArray(resId)
         }
 
         fun getColorStateList(@ColorRes color: Int): ColorStateList? {
-            return ContextCompat.getColorStateList(mContext, color)
+            return ContextCompat.getColorStateList(context, color)
         }
 
         fun getTypedArray(resId: Int): TypedArray {
-            return mContext.resources.obtainTypedArray(resId)
+            return context.resources.obtainTypedArray(resId)
         }
 
         fun getIntArray(resId: Int): IntArray {
-            return mContext.resources.getIntArray(resId)
+            return context.resources.getIntArray(resId)
         }
 
         fun getFont(resId: Int): Typeface {
-            return ResourcesCompat.getFont(mContext, resId)!!
+            return ResourcesCompat.getFont(context, resId)!!
         }
 
         fun getBitmap(@DrawableRes resId: Int): Bitmap? {
@@ -128,7 +127,7 @@ open class ResourceProvider private constructor(context: Context) {
         }
 
         fun getContentResolver(): ContentResolver {
-            return mContext.contentResolver
+            return context.contentResolver
         }
     }
 }

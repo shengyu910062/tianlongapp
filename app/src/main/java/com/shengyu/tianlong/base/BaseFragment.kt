@@ -19,8 +19,8 @@ import com.shengyu.tianlong.common.LoadingFragment
  */
 abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
 
-    lateinit var mBinding: VDB
-    private val mLoadingFragment: LoadingFragment by lazy {
+    lateinit var binding: VDB
+    private val loadingFragment: LoadingFragment by lazy {
         LoadingFragment.newInstance()
     }
 
@@ -36,23 +36,23 @@ abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(getLayoutId(), container, false)
-        mBinding = DataBindingUtil.bind(rootView)!!
+        binding = DataBindingUtil.bind(rootView)!!
 
         return rootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mBinding.lifecycleOwner = viewLifecycleOwner
+        binding.lifecycleOwner = viewLifecycleOwner
     }
 
     /**
      * Hide loading
      */
     fun hideLoadingDialog() {
-        if (mLoadingFragment.dialog?.isShowing == true) {
+        if (loadingFragment.dialog?.isShowing == true) {
             try {
-                mLoadingFragment.dismiss()
+                loadingFragment.dismiss()
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -63,10 +63,10 @@ abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
      * Show loading
      */
     fun showLoadingDialog() {
-        if (mLoadingFragment.dialog?.isShowing == true || mLoadingFragment.isVisible || mLoadingFragment.isAdded) {
+        if (loadingFragment.dialog?.isShowing == true || loadingFragment.isVisible || loadingFragment.isAdded) {
             return
         }
-        mLoadingFragment.show(childFragmentManager, "childDialog")
+        loadingFragment.show(childFragmentManager, "childDialog")
     }
 
     /**

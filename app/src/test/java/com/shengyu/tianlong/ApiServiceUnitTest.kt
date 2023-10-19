@@ -8,6 +8,7 @@ import com.shengyu.tianlong.network.ApiManager
 import com.shengyu.tianlong.network.ApiService
 import com.shengyu.tianlong.util.Logger
 import com.shengyu.tianlong.util.TAG
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
@@ -23,9 +24,10 @@ import java.util.concurrent.TimeUnit
  */
 class ApiServiceUnitTest {
 
+    @OptIn(DelicateCoroutinesApi::class)
     @Test
     fun getAttractionsIsCorrect() {
-        var logging = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
+        val logging = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
             override fun log(message: String) {
                 Logger.i(TAG, message)
             }
@@ -40,7 +42,7 @@ class ApiServiceUnitTest {
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-        var mApiService = retrofit.create(ApiService::class.java)
+        val mApiService = retrofit.create(ApiService::class.java)
         GlobalScope.launch {
             assertNotNull(mApiService.getAttractions("zh-tw", 1))
         }
