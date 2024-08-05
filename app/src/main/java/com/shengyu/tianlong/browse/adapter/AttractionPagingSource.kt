@@ -45,7 +45,11 @@ class AttractionPagingSource(
                                 LoadResult.Page(
                                     data = response.data,
                                     prevKey = null, // Only paging forward.
-                                    nextKey = nextPageNumber + 1
+                                    nextKey = if ((nextPageNumber + 1) * params.loadSize <= response.total) {
+                                        nextPageNumber + 1
+                                    } else {
+                                        null
+                                    }
                                 )
                             )
                         }, {
